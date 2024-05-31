@@ -60,9 +60,9 @@ padding: 15px 45px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height:20px;
+    height:50px;
     padding: 0 30px;
-    margin-top: 25px;
+    margin-top: 35px;
     background: var(--color-background);
     z-index: 1;
 }
