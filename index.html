@@ -1,407 +1,329 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
-    <link rel="shortchut icon" href="img/logo.png">
-    <title>Extra-Gas</title>
-    <style type="text/css">
-        .whatsapp-fixed {
-        position: fixed; /* Fijar la posición */
-        bottom: 20px; /* Distancia desde la parte inferior */
-        left: 20px; /* Distancia desde el lado derecho */
-        z-index: 999; /* Colocar sobre otros elementos */
-}
-/*/
-/* Estilos para la imagen de WhatsApp */
-.whatsapp-fixed img {
-    width: 110px; /* Tamaño de la imagen */
-    height: auto; /* Altura automática para mantener la proporción */
-    border-radius: 32%; /* Redondear la imagen */
-    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: transform 0.3s ease; /* Transición suave */
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Nuestro Sitio Web</title>
+  <style>
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000; /* Asegura que el ícono esté por encima de otros elementos */
+    }
 
-/* Efecto de zoom al pasar el ratón sobre la imagen */
-.whatsapp-fixed img:hover {
-    transform: scale(1.1); /* Aumentar el tamaño */
-}
-    </style>
-    <style>
-        /* Estilos para la ventana modal */
-.modal {
-  display: none; /* Por defecto, la ventana modal está oculta */
-  position: fixed; /* Posición fija */
-  z-index: 1; /* Poner la ventana modal por encima de todo */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; /* Permite hacer scroll si el contenido es demasiado largo */
-  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
-}
+    .whatsapp-fixed img {
+      width: 110px; /* Tamaño de la imagen */
+      height: auto; /* Altura automática para mantener la proporción */
+      border-radius: 32%; /* Redondear la imagen */
+      box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+      transition: transform 0.3s ease; /* Transición suave */
+    }
 
-/* Estilos para el contenido de la ventana modal */
-.modal-content {
-  background-color: #EFF6F5; /* Fondo blanco */
-  margin: 15% auto; /* Centra la ventana modal verticalmente */
-  padding: 18px;
-  border: 1px solid #888;
-  border-radius: 70px;
-  font-size: 25px;
-  width: 60%; /* Anchura de la ventana modal */
-}
-
-/* Estilos para el botón de cerrar (la "x") */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 55px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  border: 2px solid red;
-  cursor: pointer;
-}
-
-    </style>
+    /* Efecto de zoom al pasar el ratón sobre la imagen */
+    .whatsapp-fixed img:hover {
+      transform: scale(1.1); /* Aumentar el tamaño */
+    }
+</style>
 </head>
 
 <body>
-    
-      <div id="btn-top">
-        <span class="fas fa-angle-up"></span>
-   </div>
-
-  
-   <div class="menu-principal">
-        <div class="logo" id="logo">
-             <img src="img/logo.jpg" alt="Logo">
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>E</span>xtra <span>G</span>as</h1>
+          </a>
         </div>
-
-        <div class="menu-bar" id="menuBar">
-             <i class="fas fa-angle-right" id="btnMenuClose"></i>
-
-             <nav class="enlaces" id="enlaces">
-                  <ul>
-                       <li><a href="index.html">Servicios</a></li>
-                       <li><a href="#informacion">Equipo</a></li>
-                       <li><a href="#">Contacto</a></li>
-                  </ul>
-             </nav>
-
-             <div class="sociales">
-                  <a href="#"><span class="fab fa-facebook"></span></a>
-                  <a href="#"><span class="fab fa-instagram"></span></a>
-                  <a href="#"><span class="fab fa-twitter"></span></a>
-                  <a href="#"><span class="fab fa-youtube"></span></a>
-             </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="#services" data-after="Service">Productos</a></li>
+            <li><a href="#projects" data-after="Projects">Galería</a></li>
+            <li><a href="#about" data-after="About">Sobre Nosotros</a></li>
+            <li><a href="#contact" data-after="Contact">Contacto</a></li>
+          </ul>
         </div>
-
-        <i class="fas fa-bars" id="btnMenuOpen"></i>
-
-
-
-   </div>
-    <section id="menu-productos">
-        <div class="contenedor-principal">
-            <button id="btn-izquierda"><span class="fas fa-angle-left"></span></button>
-
-            <div class="slider">
-                <div class="container-productos">
-                    <div class="descripcion-productos">
-                        <h2>Para Negocios, <b>Rendimiento y durabilidad</b> </h2>
-                        <h1>Garrafa de 45kg</h1>
-                        <p>Especial para negocios y hogares con altos consumos.</p>
-                        <button class="btn"><a href="https://wa.me/3731497793" target="_blank" style="color: white;">¡Solicítalas aquí!</a> <span class="fas fa-angle-right"></span> </button>
-                    </div>
-                                                            
-                    <div class="imagen-productos">
-                        <img src="img/15.jpg" alt="">
-                    </div>
-
-                </div>
-
-                <div class="container-productos">
-                    <div class="descripcion-productos">
-                        <h2>Para Comercios pequeños, <b>Alto Rendimiento y eficiencia</b> </h2>
-                        <h1>Garrafa de 15kg</h1>
-                        <p>Especial para negocios pequeños y hogares.</p>
-                        <button class="btn"><a href="https://wa.me/3731497793" target="_blank" style="color: white;">¡Solicítalas aquí!</a> <span class="fas fa-angle-right"></span> </button>
-                    </div>
-                                        
-                    <div class="imagen-productos">
-                        <img src="img/45.jpg" alt="">
-                    </div>
-
-                </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
 
 
-                <div class="container-productos">
-                    <div class="descripcion-productos">
-                        <h2>Para Comercios pequeños, <b>Buena performance en lo cotidiano</b> </h2>
-                        <h1>Garrafa de 10kg</h1>
-                        <p>Para todo tipo de usuario del hogar.</p>
-                       <button class="btn"><a href="https://wa.me/3731497793" target="_blank" style="color: white;">¡Solicítalas aquí!</a> <span class="fas fa-angle-right"></span> </button>
-                </div>
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1> <span></span></h1>
+        <h1>EXTRA GAS <span></span></h1>
+        <h1> <span></span></h1>
+        <!-- <a href="#projects" type="button" class="cta">Portfolio</a> -->
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
 
-
-                                        
-                    <div class="imagen-productos">
-                        <img src="img/10.jpg" alt="">
-                    </div>
-
-                </div>
-
-            </div>
-
-            <button id="btn-derecha"><span class="fas fa-angle-right"></span></button>   
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title"><span><b>Nuestros Productos</b></span></h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas
+          magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias
+          voluptatum explicabo!</p>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+          <!-- <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Garrafa de 10 kilos</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/10.jpg" alt="garrafa de 10 kilos">
         </div>
-    </section>
-
-    <section id="servicios">
-        <div class="servicios-titulos">
-            <h2 class="sutitulos">La mejor garrafa del mundo</h2>
-            <h1 class="titulos">Bienvenidos a Extra Gas</h1>
+        <div class="service-item">
+          <!-- <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Garrafa de 15 kilos</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+           <img src="img/15.jpg" alt="garrafa de 15 kilos">
         </div>
-        <div class="servicios-container">
-            <div class="imagen-central">
-                <img src="img/tiposgarrfas.png" alt="">
-            </div>
-            <div class="items caracteristicas">
-                <p><span class="fas fa-check-square"></span></p>
-                <p class="titulo-item">calidad</p>
-                <p class="texto-item">Nuestros productos son de excelente calidad y rendimiento, especial para disfrutar cómodamente en su hogar</p>
-            
-            </div>
-
-            <div class="items calidad">
-                <p><span class="fas fa-address-book"></span></p>
-                <p class="titulo-item">Características</p>
-                <p class="texto-item">Nos caracterizamos por tener un personal capacitado que mantiene los estándares de calidad y seguridad de forma eficiente</p>
-            
-            </div>
-
-            <div class="items rapidez">
-                <p><span class="fas fa-clock"></span></p>
-                <p class="titulo-item">Rapidez</p>
-                <p class="texto-item">Siempre abogamos por la necesidad de nuestros clientes para una entrega eficáz</p>
-            
-            </div>
-
-            <div class="items reparto">
-                <p><span class="fas fa-shipping-fast"></span></p>
-                <p class="titulo-item">Reparto</p>
-                <p class="texto-item">Los repartos son en toda la ciudad con horarios por la mañana desde 8 a 12hs y por la tarde de 16hs a 20hs</p>
-            
-            </div>
-
-
+        <div class="service-item">
+          <!-- <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Garrafa de 45 kilos</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/45.jpg" alt="garrafa de 45 kilos">
         </div>
-    </section>
-
-
-    <!--seccion de equipo-->
-
-    <section id="equipo">
-        <div class="persona">
-            <img src="img/camion.jpg" alt="" class="persona-imagen">
-            <div class="persona-info">
-                <!-- <h2>*</h2>
-                <p>Transporte</p> -->
-                <div class="social-media">
-                    <a href=""><span class="fab fa-facebook"></span></a>
-                    <a href=""><span class="fab fa-instagram"></span></a>
-                    <a href=""><span class="fab fa-twitter"></span></a>
-                    <a href=""><span class="fab fa-linkedin-in"></span></a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="persona">
-            <img src="img/pilas.jpg" alt="" class="persona-imagen">
-            <div class="persona-info">
-               <!--  <h2>*</h2>
-                <p>Tenemos un gran stock</p> -->
-                <div class="social-media">
-                    <a href=""><span class="fab fa-facebook"></span></a>
-                    <a href=""><span class="fab fa-instagram"></span></a>
-                    <a href=""><span class="fab fa-twitter"></span></a>
-                    <a href=""><span class="fab fa-linkedin-in"></span></a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="persona">
-            <img src="img/banner_estafas_2000.png" alt="" class="persona-imagen">
-            <div class="persona-info">
-               <!--  <h2>*</h2>
-                <p>Repartidos a domicilio</p> -->
-                <div class="social-media">
-                    <a href=""><span class="fab fa-facebook"></span></a>
-                    <a href=""><span class="fab fa-instagram"></span></a>
-                    <a href=""><span class="fab fa-twitter"></span></a>
-                    <a href=""><span class="fab fa-linkedin-in"></span></a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="persona">
-            <img src="img/hogar.jpeg" alt="" class="persona-imagen">
-            <div class="persona-info">
-                <!-- <h2>*</h2>
-                <p>Excelente para su hogar</p> -->
-                <div class="social-media">
-                    <a href=""><span class="fab fa-facebook"></span></a>
-                    <a href=""><span class="fab fa-instagram"></span></a>
-                    <a href=""><span class="fab fa-twitter"></span></a>
-                    <a href=""><span class="fab fa-linkedin-in"></span></a>
-                </div>
-            </div>
-        </div>
-
-
-    </section>
-    <section id="informacion">
-        <div class="info">
-            <img src="img/calidad.jpg" alt="" class="imagen-ingre">
-            <div class="infor-ingre">
-                <p><span class="fas fa-check-square"></span></p>
-                <p class="txt-ingre">Calidad</p>
-            </div>
-        </div>
-
-        <div class="info">
-            <img src="img/repartoDomicilio.jpg" alt="" class="imagen-ingre">
-            <div class="infor-ingre">
-                <p><span class="fas fa-shipping-fast"></span></p>
-                <p class="txt-ingre">Reparto</p>
-            </div>
-        </div>
-
-
-        <div class="info">
-            <img src="img/centro.jpg" alt="" class="imagen-ingre">
-            <div class="infor-ingre">
-                <p><span class="fas fa-clock"></span></p>
-                <p class="txt-ingre">Centro</p>
-            </div>
-        </div>
-
-
-        <div class="info">
-            <img src="img/disponibilidad.jpg" alt="" class="imagen-ingre">
-            <div class="infor-ingre">
-                <p><span class="fas fa-address-book"></span></p>
-                <p class="txt-ingre">Disponibilidad</p>
-            </div>
-        </div>
-
-
-    </section>
-
-    <!--sección contacto-->
-    <section id="contacto">
-        <div class="titulo-contacto">
-            <h2 class="subtitulos">Queremos conocer tu opinión</h2>
-            <h1 class="titulos">Contáctanos</h1>
-        </div>
-
-        <form action="" id="formulario">
-            <div class="two-fields">
-                <div class="InputConIcon">
-                    <input type="text" id="nombre" name="nombre" class="input-text" placeholder="Nombre">
-                    <i class="fas fa-user"></i>
-                </div>
-
-                <div class="InputConIcon">
-                    <input type="email" id="email" name="email" class="input-email" placeholder="Email">
-                    <i class="fas fa-envelope"></i>
-                </div>
-            </div>
-            <!-- sección whatsapp-->
-            <div class="whatsapp-fixed">
+        <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Raza</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/perro1.jpeg" alt="raza">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Dogui</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/perro2.jpeg" alt="Gati">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Sabrositos</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/gato2.jpg" alt="Sabrosito">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Felix</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/gato5.jpeg" alt="cat chow">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Gati</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/gato1.jpeg" alt="garrafa de 45 kilos">
+        </div> 
+        <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Purina Cat Chow</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/gato4.jpg" alt="purina cat chow">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Venta de Bidones con agua</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/agua.jpeg" alt="bidón con agua">
+        </div> 
+         <div class="service-item">
+          <!--<div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div> -->
+          <h2>Venta de Bidones con agua</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis debitis rerum, magni voluptatem sed
+            architecto placeat beatae tenetur officia quod</p>
+            <img src="img/agua2.jpeg" alt="bidón con agua">
+        </div> 
+      </div>
+    </div>
+  </section>
+  <!-- End Service Section -->
+    <!--íncono whatsapp-->
+    <div class="whatsapp-fixed">
         <a target="_blank" href="https://wa.me/3731497793">
           <img src="img/sap.png">
         </a>
         </div>
-      </nav>
-      <div class="about-heading-content">
-     
-     <div class="row">
-            <!--fin sección-->
-            <div class="fiels">
-                <div class="InputConIcon textareaIcon">
-                    <textarea name="comentarios" id="comentarios" class="textarea" placeholder="Ingrese su mensaje"></textarea>
-                    <i class="fas fa-comments"></i>
-                </div>
+    <!--fin de ícono-->
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title">¿Qué servicios <span>realizamos</span>?</h1>
+      </div>
+      <div class="all-projects">
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Reparto a domicilio de gas</h1>
+            <h2>Coding is Love</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/repartoDomicilio.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Reparto a domicilio de agua</h1>
+            <h2>Coding is Love</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/agua2.jpeg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Durabilidad y rendimiento</h1>
+            <h2>Coding is Love</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/disponibilidad.jpg" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1>Máxima calidad y pureza</h1>
+            <h2>Coding is Love</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/agua3.jpeg" alt="img">
+          </div>
+        </div>
+        <!-- <div class="project-item"> -->
+         <!--  <div class="project-info">
+            <h1>Reparto de garrafas Gral Pinedo-Las Breñas</h1>
+            <h2>Coding is Love</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde
+              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt
+              harum? Ipsum repellat animi, fugit architecto voluptatum odit et!</p>
+          </div> -->
+          <!-- <div class="project-img">
+            <img src="./img/camion.jpg" alt="img">
+          </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
 
-            </div>
-            <div class="fiels-btn">
-                <input type="submit" class="btn btn-input" value="Enviar">
-            </div>
-        </form>
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="./img/extra.png" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">¿Donde <span>estamos</span>?</h1>
+        <h2>Barrio Cambalache</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, velit alias eius non illum beatae atque
+          repellat ratione qui veritatis repudiandae adipisci maiores. At inventore necessitatibus deserunt
+          exercitationem cumque earum omnis ipsum rem accusantium quis, quas quia, accusamus provident suscipit magni!
+          Expedita sint ad dolore, commodi labore nihil velit earum ducimus nulla quae nostrum fugit aut, deserunt
+          reprehenderit libero enim!</p>
+        <a href="#" class="cta">Volver</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
 
-    </section>
-    <div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    
-    <table>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title"><span>Contacto</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Celular</h1>
+            <h2>+1 234 123 1234</h2>
+            <h2>+1 234 123 1234</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>info@gmail.com</h2>
+            <h2>abcd@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Domicilio</h1>
+            <h2>Fatikchhari, Chittagong, Bangladesh</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
 
-        <h2>ExtraGas</h2>
-        <label for="contacto">Contacto:</label>
-        <tr>
-            <td>Número de contacto:</td>
-        </tr>
-        <tr>
-            <td>3731408971</td>
-        </tr>
-        <tr>
-            <td>Estamos ubicados en Barrio Cambalache</td>
-        </tr>
-    </table>
-  </div>
-</div>
-<script src="js/modal.js"></script>
-<script src="js/app.js"></script>
-<script>
-    // Obtener el elemento de la ventana modal y el botón de cierre
-var modal = document.getElementById("myModal");
-var closeButton = document.getElementsByClassName("close")[0];
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>E</span>xtra <span>G</span>as</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="img/facebook.ico" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="img/instagram.ico" /></a>
 
-// Obtener el enlace "Contacto"
-var contactoLink = document.querySelector("#enlaces ul li:nth-child(3) a");
-
-// Cuando se hace clic en el enlace "Contacto", mostrar la ventana modal
-contactoLink.onclick = function() {
-  modal.style.display = "block";
-}
-
-// Cuando se hace clic en el botón de cerrar, ocultar la ventana modal
-closeButton.onclick = function() {
-  modal.style.display = "none";
-}
-
-// Cuando el usuario hace clic fuera de la ventana modal, ocultarla
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-</script>
-    
-    
+        </div>
+        <!-- <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+        </div> -->
+        <div class="social-item">
+          <a href="https://wa.me/3731497793" target="_blank"><img src="img/sap.ico" /></a>
+        </div>
+      </div>
+      <p>Todos los Derechos Reservados &copy;</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
 </body>
+
 </html>
