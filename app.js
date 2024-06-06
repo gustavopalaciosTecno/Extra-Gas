@@ -23,3 +23,9 @@ menu_item.forEach((item) => {
 		mobile_menu.classList.toggle('active');
 	});
 });
+
+function cambiarColor() {
+    const colores = ['#ADD8E6', '#FFB6C1', '#FFFFE0', '#FFF120'];
+	const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+	document.body.style.backgroundColor = colorAleatorio;
+}
