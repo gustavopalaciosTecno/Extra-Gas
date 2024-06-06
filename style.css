@@ -60,7 +60,9 @@ p {
 }
 .cta:hover {
 	color: white;
-	background-color: crimson;
+	background-color: rgb(211, 136, 150);
+	border-radius: 125px;
+	transition: all 2s;
 }
 .brand h1 {
 	font-size: 3rem;
