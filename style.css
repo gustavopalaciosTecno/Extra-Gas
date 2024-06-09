@@ -12,6 +12,7 @@ html {
 a {
 	text-decoration: none;
 }
+
 .container {
 	min-height: 100vh;
 	width: 100%;
@@ -24,6 +25,12 @@ img {
 	width: 100%;
 	object-fit: cover;
 }
+
+img:hover{
+	border-radius: 120px;
+	transition: transform 0.3s ease;
+}
+
 p {
 	color: black;
 	font-size: 1.4rem;
