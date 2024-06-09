@@ -25,7 +25,7 @@ menu_item.forEach((item) => {
 });
 
 function cambiarColor() {
-    const colores = ['#ADD8E6', '#FFB6C1', '#FFFFE0', '#FFF120', '#FF9003','#FFFFFF'];
+    const colores = ['#ADD8E6', '#FFB6C1', '#FFFFE0', '#FFF120', '#FF9003','#8c8c8c'];
 	const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
 	document.body.style.backgroundColor = colorAleatorio;
 }
